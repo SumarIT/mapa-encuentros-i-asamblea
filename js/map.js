@@ -7,10 +7,10 @@ const markers = [];
 let popup = null;
 
 const iconOk = L.icon({
-    iconUrl: '/img/marker-icon-magenta.png', iconAnchor: [12.5, 41]
+    iconUrl: 'img/marker-icon-magenta.png', iconAnchor: [12.5, 41]
 });
 const iconPass = L.icon({
-    iconUrl: '/img/marker-icon-grey.png', iconAnchor: [12.5, 41]
+    iconUrl: 'img/marker-icon-grey.png', iconAnchor: [12.5, 41]
 });
 
 d3.csv("data/encuentros.csv", (data) => {
