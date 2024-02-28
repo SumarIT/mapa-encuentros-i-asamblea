@@ -47,8 +47,66 @@ table {
 	border-spacing: 0;
 }
 
+/* FONTS */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+}
+
+/* MAIN */
+* {
+  color: black;
+  font-family: 'Inter', 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
 /* MAP */
 
 #map {
   height: 100%;
+}
+
+
+.leaflet-popup {
+  font-family: 'Inter', 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.leaflet-popup a {
+  color: #e51c55ff;
+  text-decoration: none;
+}
+
+.leaflet-popup a:hover {
+  text-decoration: underline;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0;
+  background: #ededed;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #ededed;
+}
+
+.leaflet-popup-content {
+  padding: 12px 15px;
+  margin: 0;
+}
+
+.leaflet-popup-content > * {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.leaflet-popup-close-button {
+  display: none;
 }
