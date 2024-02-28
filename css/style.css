@@ -107,6 +107,7 @@ table {
   display: block;
 }
 
+.leaflet-control-attribution,
 .leaflet-popup-close-button {
   display: none;
 }
