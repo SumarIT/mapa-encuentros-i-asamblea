@@ -17,7 +17,7 @@ d3.csv("data/encuentros.csv", (data) => {
     const dates = data.Fecha.split('/');
     const times = data.Hora.split(':');
     const date = new Date(dates[2], dates[1] - 1, dates[0], times[0], times[1]);
-    const icon = date > new Date() && data.Link ? iconOk : iconPass;
+    const icon = date > new Date() ? iconOk : iconPass;
     const hasLink = date > new Date() && data.Link;
     const popupContent = hasLink
         ? `<a href="${data.Link}" target="_blank" rel="noopener noreferrer">${data['Título']}</a><span>${data.Fecha} - ${data.Hora}</span>`
