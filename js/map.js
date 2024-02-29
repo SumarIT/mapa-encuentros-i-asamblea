@@ -24,7 +24,7 @@ d3.csv("data/encuentros.csv", (data) => {
         : `<span>${data['Título']}</span>`;
     const popupDate = isNaN(date)
         ? '<span class="grey">Próximamente</span>'
-        : `<span>${date.getUTCDate()}/${date.getUTCMonth()+1}/${date.getFullYear()} - ${data.Hora}</span>`;
+        : `<span>${date.getUTCDate()}.${date.getUTCMonth()+1}.${date.getFullYear()} - ${data.Hora}</span>`;
     const marker = L.marker([data.Latitud, data.Longitud], { icon });
     marker.addTo(map);
     marker.bindPopup(`${popupTitle}${popupDate}`);
