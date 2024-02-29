@@ -107,6 +107,10 @@ table {
   display: block;
 }
 
+.leaflet-popup-content .grey {
+  color: grey;
+}
+
 .leaflet-control-attribution,
 .leaflet-popup-close-button {
   display: none;

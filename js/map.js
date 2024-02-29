@@ -17,13 +17,16 @@ d3.csv("data/encuentros.csv", (data) => {
     const dates = data.Fecha.split('/');
     const times = data.Hora.split(':');
     const date = new Date(dates[2], dates[1] - 1, dates[0], times[0], times[1]);
-    const icon = date > new Date() ? iconOk : iconPass;
+    const icon = date > new Date() || isNaN(date) ? iconOk : iconPass;
     const hasLink = date > new Date() && data.Link;
-    const popupContent = hasLink
-        ? `<a href="${data.Link}" target="_blank" rel="noopener noreferrer">${data['Título']}</a><span>${data.Fecha} - ${data.Hora}</span>`
-        : `<span>${data['Título']}</span><span>${data.Fecha} - ${data.Hora}</span>`;
+    const popupTitle = hasLink
+        ? `<a href="${data.Link}" target="_blank" rel="noopener noreferrer">${data['Título']}</a>`
+        : `<span>${data['Título']}</span>`;
+    const popupDate = isNaN(date)
+        ? '<span class="grey">Próximamente</span>'
+        : `<span>${date.toLocaleDateString()} - ${data.Hora}</span>`;
     const marker = L.marker([data.Latitud, data.Longitud], { icon });
     marker.addTo(map);
-    marker.bindPopup(popupContent);
+    marker.bindPopup(`${popupTitle}${popupDate}`);
     markers.push(marker);
 });
